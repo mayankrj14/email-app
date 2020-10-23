@@ -1,11 +1,18 @@
-# email-app
+# Email-app
 
-### A E-mail sending web app which can send mail to multiple people by single click.
+## A E-mail sending web app which can send mail to multiple people by single click.
 
 ### Colour Pallet to be followed:
 
 1. #ffffff 
+
 2. #2fccdf ![chrome_S8EsjXH99Q](https://user-images.githubusercontent.com/54861487/82550382-0a57d600-9b7c-11ea-95c0-2e9244b2c8e2.png)
+
+3. #2c50ac ![chrome_W2g5DSUDog](https://user-images.githubusercontent.com/54861487/82550540-51de6200-9b7c-11ea-9bdc-a3f6a9003265.png)
+
+4. #070707 ![chrome_6HrWxXKqCD](https://user-images.githubusercontent.com/54861487/82550631-78040200-9b7c-11ea-8460-8b9b4161e4cc.png)
+
+#### screen shots 
 
 ## Contributing to this repo
 
@@ -45,32 +52,31 @@ cd email-app
 **4.** Create a new branch.
 
 ```terminal
-git checkout -b <your_branch_name>
+   $ git checkout -b <your_branch_name>
 ```
 
 **5.** Make changes in source code.
 
- Build it locally and Make changes.
+      Build it locally and Make changes.
  
 **6.** Then Add your changes.
  
-````terminal 
+```terminal 
   $ git add .
 ```
 
 **7.** Commit your changes.
 
-````
-Type in a message relevant for the code reveiwer using
+```
+   Type in a message relevant for the code reveiwer using
 
    $ git commit -m "small description about changes"
        
 ```
-
 **8.** Push your local branch to the remote repository.
 
 ```terminal
-git push -u origin <your_branch_name>
+  $ git push -u origin <your_branch_name>
 ```
 
 **9.** Create a Pull Request!
@@ -85,3 +91,5 @@ click on `Compare and Pull Request`
 <img src="https://user-images.githubusercontent.com/41269164/70219836-8d6ea680-176b-11ea-81d5-549093bf0954.png" width=600>
 
 **Congratulations!** Sit and relax, you've made your contribution to [EMAIL APP](https://github.com/VineetS086/email-app) project.
+
+**MADE WITH** <img src="Assets/heart.png" width= "10"> **AND** <img src="Assets/coffee.png" width="10">.

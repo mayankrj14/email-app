@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 
 #created module
 from .extra import (
-    create_user,
+    create_user_,
 )
 
 

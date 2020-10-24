@@ -3,28 +3,38 @@ from django.http import HttpResponse
 
 #User and login imports
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
 
 def home_view(request):             #
     return HttpResponse('<h1>Hello, World!</h1>Home')
     
-
-def login_view(request):            #
+#Login and Logout
+def login_view(request):            #Login
 
     if request.method == "POST":
-        user_name = request.POST.get('username')
+        username_   = request.POST.get('username')
+        password_   = request.POST.get('password')
 
-        user = authenticate(username='john', password='secret')
+        user = authenticate(username = username_, password = password_)
+        
         if user is not None:
-            # LOGIN PROCESS
+            login(request, user)
+            
+            #Page ReDirect
         else:
+            pass
             # Warning/ReCheck Message
 
 
     return HttpResponse('<h1>Hello, World!</h1>Login')
 
+def logout_view(request):           #Logout
+    logout(request)
+    #Page ReDirect
 
-def signup_view(request):           #
+#SignUp
+def signup_view(request):           #SignUp
 
     if request.method == "POST":
         pass

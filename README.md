@@ -13,6 +13,9 @@
 4. #070707 ![chrome_6HrWxXKqCD](https://user-images.githubusercontent.com/54861487/82550631-78040200-9b7c-11ea-8460-8b9b4161e4cc.png)
 
 #### screen shots 
+<img src="Assets/landingpage.png" width="300">
+<img src="Assets/login.jpg" width="300">
+<img src="Assets/signup.jpg" width= "300">
 
 ## Contributing to this repo
 
@@ -92,4 +95,4 @@ click on `Compare and Pull Request`
 
 **Congratulations!** Sit and relax, you've made your contribution to [EMAIL APP](https://github.com/VineetS086/email-app) project.
 
-**MADE WITH** <img src="Assets/heart.png" width= "10"> **AND** <img src="Assets/coffee.png" width="10">.
+**MADE WITH** <img src="Assets/heart.png" width= "30"> **AND** <img src="Assets/coffee.png" width="30">.

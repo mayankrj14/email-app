@@ -13,9 +13,9 @@
 4. #070707 ![chrome_6HrWxXKqCD](https://user-images.githubusercontent.com/54861487/82550631-78040200-9b7c-11ea-8460-8b9b4161e4cc.png)
 
 #### screen shots 
-<img src="Assets/landingpage.png" width="300">
-<img src="Assets/login.jpg" width="300">
-<img src="Assets/signup.jpg" width= "300">
+<img src="Assets/landingpage.png" width="600">
+<img src="Assets/login.jpg" width="600">
+<img src="Assets/signup.jpg" width= "600">
 
 ## Contributing to this repo
 
@@ -36,7 +36,7 @@
 
 **1.** Fork [this](https://github.com/VineetS086/email-app) repository.
 
-<img src="https://user-images.githubusercontent.com/41269164/70219309-9a3eca80-176a-11ea-8a4d-1bd701d07314.png" width=300>
+<img src="https://user-images.githubusercontent.com/41269164/70219309-9a3eca80-176a-11ea-8a4d-1bd701d07314.png" width=500>
 
 **2.** Clone your forked repository to your local system :busts_in_silhouette:
 
@@ -44,7 +44,7 @@
 git clone https://github.com/<your-github-username>/email-app
 ```
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5N0HJ9db7jSvcL4dsDscZQBzqQqqKVs0BnO1OVz26glLWKJRY&usqp=CAU" width="300">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5N0HJ9db7jSvcL4dsDscZQBzqQqqKVs0BnO1OVz26glLWKJRY&usqp=CAU" width="500">
 
 **3.** Navigate to the project directory.
 
@@ -95,4 +95,4 @@ click on `Compare and Pull Request`
 
 **Congratulations!** Sit and relax, you've made your contribution to [EMAIL APP](https://github.com/VineetS086/email-app) project.
 
-**MADE WITH** <img src="Assets/heart.png" width= "30"> **AND** <img src="Assets/coffee.png" width="30">.
+**MADE WITH** <img src="Assets/heart.png" width= "20"> **AND** <img src="Assets/coffee.png" width="20">.

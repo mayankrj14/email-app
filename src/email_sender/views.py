@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 def home_view(request):             #
     return HttpResponse('<h1>Hello, World!</h1>Home')
     
+
 #Login and Logout
 def login_view(request):            #Login
 
@@ -20,18 +21,16 @@ def login_view(request):            #Login
         
         if user is not None:
             login(request, user)
-            
             #Page ReDirect
         else:
             pass
             # Warning/ReCheck Message
-
-
     return HttpResponse('<h1>Hello, World!</h1>Login')
 
 def logout_view(request):           #Logout
     logout(request)
     #Page ReDirect
+
 
 #SignUp
 def signup_view(request):           #SignUp

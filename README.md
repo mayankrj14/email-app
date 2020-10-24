@@ -31,7 +31,7 @@
 **3.** JAVASCRIPT <br>
 
 #### Backend 
-**1.** Django
+**1.** Django(3.1.2)
 
 ## Steps to contribute :
 

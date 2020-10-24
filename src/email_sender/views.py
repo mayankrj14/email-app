@@ -2,8 +2,12 @@
 from django.http import HttpResponse 
 
 #User and login imports
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+
+#created module
+from .extra import (
+    create_user,
+)
 
 
 def home_view(request):             #

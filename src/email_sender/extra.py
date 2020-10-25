@@ -1,5 +1,8 @@
 from django.contrib.auth.models import User
+from django.shortcuts import (redirect, )
+from django.urls import resolve
 
+from .models import History
 
 def create_user_(request):
 
@@ -13,9 +16,29 @@ def create_user_(request):
         
     user.save()
 
-    pass
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return f'" {ip} "'
 
 
-# At this point, user is a User object that has already been saved
-# to the database. You can continue to change its attributes
-# if you want to change other fields.
+def logout(request):           #Logout
+    logout(request)
+    return redirect('../'*2)
+    #Page ReDirect
+
+
+def update_history(request, action='Page Visit'):
+    his = History(
+        user        = request.user,
+        page        = resolve(request.path_info).url_name,
+        action      = action,
+        email_from  = request.POST.get('email_from'),
+        email_to    = request.POST.get('email_to'),
+        ip          = get_client_ip(request),
+    )
+    his.save()

@@ -1,5 +1,5 @@
-#from django.shortcuts import render,
-from django.http import HttpResponse 
+from django.shortcuts import (redirect, render,  )
+from django.http import (HttpResponse, )
 
 #User and login imports
 from django.contrib.auth import authenticate, login, logout
@@ -7,15 +7,18 @@ from django.contrib.auth import authenticate, login, logout
 #created module
 from .extra import (
     create_user_,
+    update_history,
 )
 
-
 def home_view(request):             #
-    return HttpResponse('<h1>Hello, World!</h1>Home')
+    update_history(request)
+
+    return HttpResponse(f'<h1>Hello, World!</h1>Home')
     
 
 #Login and Logout
 def login_view(request):            #Login
+    update_history(request)
 
     if request.method == "POST":
         username_   = request.POST.get('username')
@@ -25,15 +28,14 @@ def login_view(request):            #Login
         
         if user is not None:
             login(request, user)
-            #Page ReDirect
+            return redirect('../')
+            
+
         else:
             pass
             # Warning/ReCheck Message
+    
     return HttpResponse('<h1>Hello, World!</h1>Login')
-
-def logout_view(request):           #Logout
-    logout(request)
-    #Page ReDirect
 
 
 #SignUp

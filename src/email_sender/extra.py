@@ -33,8 +33,10 @@ def logout(request):           #Logout
 
 
 def update_history(request, action='Page Visit'):
+    user_   = request.user if request.user.is_authenticated else None
+    
     his = History(
-        user        = request.user,
+        user        = user_,
         page        = resolve(request.path_info).url_name,
         action      = action,
         email_from  = request.POST.get('email_from'),

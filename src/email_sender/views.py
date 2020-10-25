@@ -12,8 +12,7 @@ from .extra import (
 
 def home_view(request):             #
     update_history(request)
-
-    return HttpResponse(f'<h1>Hello, World!</h1>Home')
+    return HttpResponse(f'<h1>Hello, World!</h1>Home <p>welcome {request.user}</p>')
     
 
 #Login and Logout
@@ -40,6 +39,7 @@ def login_view(request):            #Login
 
 #SignUp
 def signup_view(request):           #SignUp
+    update_history(request)
 
     if request.method == "POST":
         pass
@@ -48,4 +48,5 @@ def signup_view(request):           #SignUp
 
 
 def email_sender_view(request):     #POST Request Form
+    update_history(request)
     return HttpResponse('<h1>Hello, World!</h1>email_sender')

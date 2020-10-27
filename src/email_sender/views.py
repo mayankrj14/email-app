@@ -3,6 +3,8 @@ from django.http import (HttpResponse, )
 
 #User and login imports
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+
 
 #created module
 from .extra import (
@@ -15,12 +17,18 @@ def home_view(request):             #
     context = {
         
     }
+    if request.user.is_authenticated:
+        return redirect('Email')
+
     return render(request, 'index.html', context)
     
 
 #Login and Logout
 def login_view(request):            #Login
     update_history(request)
+    context = {
+        
+    }
 
     if request.method == "POST":
         username_   = request.POST.get('username')
@@ -28,20 +36,14 @@ def login_view(request):            #Login
 
         print(username_,password_)
         user = authenticate(username = username_, password = password_)
-        login(request, user)
-        return redirect('../')
+        
         if user is not None:
             login(request, user)
-            return redirect('../')
+            return redirect('Email')
             
-
         else:
-            pass
-            # Warning/ReCheck Message
-    
-    context = {
-        
-    }
+            context['message'] = 'Invalid username/password'
+            
     return render(request, 'login.html', context)
 
 
@@ -58,3 +60,7 @@ def signup_view(request):           #SignUp
 def email_sender_view(request):     #POST Request Form
     update_history(request)
     return HttpResponse('<h1>Hello, World!</h1>email_sender')
+
+def logout_view(request):           #Logout
+    logout(request)
+    return redirect('Home')

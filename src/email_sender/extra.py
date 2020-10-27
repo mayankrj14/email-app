@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import (redirect, )
 from django.urls import resolve
 
+import smtplib
+
 from .models import History
 
 def create_user_(request):
@@ -26,11 +28,6 @@ def get_client_ip(request):
     return f'" {ip} "'
 
 
-def logout(request):           #Logout
-    logout(request)
-    return redirect('../'*2)
-    #Page ReDirect
-
 
 def update_history(request, action='Page Visit'):
     user_   = request.user if request.user.is_authenticated else None
@@ -44,3 +41,22 @@ def update_history(request, action='Page Visit'):
         ip          = get_client_ip(request),
     )
     his.save()
+
+
+def send_mail(args = None):
+    print('mail')
+    me = 'emailsender.smvdu@gmail.com'
+    password = input('Password of the email')
+    email = 'vineetmahajan2000@gmail.com'
+        
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.starttls()
+        server.login(me, password)
+
+        SUBJECT = args['Subject']  
+        TEXT = args['Text']  
+        
+        message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
+        
+        server.sendmail(email, me, message)
+        

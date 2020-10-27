@@ -13,19 +13,18 @@ from .extra import (
 )
 
 def home_view(request):             #
-    update_history(request)
     context = {
         
     }
     if request.user.is_authenticated:
         return redirect('Email')
 
+    #update_history(request)
     return render(request, 'index.html', context)
     
 
 #Login and Logout
 def login_view(request):            #Login
-    update_history(request)
     context = {
         
     }
@@ -43,7 +42,7 @@ def login_view(request):            #Login
             
         else:
             context['message'] = 'Invalid username/password'
-            
+    #update_history(request)        
     return render(request, 'login.html', context)
 
 
@@ -54,13 +53,18 @@ def signup_view(request):           #SignUp
     if request.method == "POST":
         pass
 
+    #update_history(request)
     return HttpResponse('<h1>Hello, World!</h1>Signup')
 
 
 def email_sender_view(request):     #POST Request Form
+    if not request.user.is_authenticated:
+        return redirect('Login')
+
     update_history(request)
     return HttpResponse('<h1>Hello, World!</h1>email_sender')
 
 def logout_view(request):           #Logout
+    #update_history(request)
     logout(request)
     return redirect('Home')

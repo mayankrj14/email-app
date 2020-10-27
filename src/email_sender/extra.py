@@ -42,12 +42,12 @@ def update_history(request, action='Page Visit'):
     )
     his.save()
 
-
+import smtplib
 def send_mail(args = None):
     print('mail')
-    me = 'emailsender.smvdu@gmail.com'
-    password = input('Password of the email')
-    email = 'vineetmahajan2000@gmail.com'
+    me = 'assassinvineet@gmail.com'
+    password = input('Password of the email: ')
+    email = ['vineetmahajan2000@gmail.com', 'emailsender.smvdu@gmail.com']
         
     with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.starttls()
@@ -57,6 +57,7 @@ def send_mail(args = None):
         TEXT = args['Text']  
         
         message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-        
-        server.sendmail(email, me, message)
+        print('message')
+        server.sendmail(me, email, message)
+        print('sent')
         

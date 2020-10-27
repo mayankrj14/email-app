@@ -12,7 +12,10 @@ from .extra import (
 
 def home_view(request):             #
     update_history(request)
-    return HttpResponse(f'<h1>Hello, World!</h1>Home <p>welcome {request.user}</p>')
+    context = {
+        
+    }
+    return render(request, 'index.html', context)
     
 
 #Login and Logout
@@ -23,8 +26,10 @@ def login_view(request):            #Login
         username_   = request.POST.get('username')
         password_   = request.POST.get('password')
 
+        print(username_,password_)
         user = authenticate(username = username_, password = password_)
-        
+        login(request, user)
+        return redirect('../')
         if user is not None:
             login(request, user)
             return redirect('../')
@@ -34,7 +39,10 @@ def login_view(request):            #Login
             pass
             # Warning/ReCheck Message
     
-    return HttpResponse('<h1>Hello, World!</h1>Login')
+    context = {
+        
+    }
+    return render(request, 'login.html', context)
 
 
 #SignUp

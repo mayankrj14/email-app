@@ -1,10 +1,12 @@
-from django.shortcuts import (redirect, render,  )
+from django.shortcuts import (
+    redirect, render, get_object_or_404 )
 from django.http import (HttpResponse, )
 
 #User and login imports
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
+from .models import User_Key
 
 #created module
 from .extra import (
@@ -68,3 +70,16 @@ def logout_view(request):           #Logout
     #update_history(request)
     logout(request)
     return redirect('Home')
+
+
+def activation_view(request, user_, key_):
+    user    = get_object_or_404(User, username=user_)
+    
+    if user.user_key.key == key_:
+        user.is_active = True
+        user.save()
+        return HttpResponse(f'<h1>You Are Activated...</h1>')
+
+    else:
+        return HttpResponse(f'<h1>Activativation Failed</h1>')
+    

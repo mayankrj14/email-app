@@ -72,3 +72,4 @@ def send_mail_(args):
         #print(message)
         server.sendmail(from_addr, to_addr, message)
         #print('sent')
+        

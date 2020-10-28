@@ -2,6 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from datetime import datetime
+import random
+import string
+
+
+def get_random_string(length):
+    chars = string.ascii_letters + string.digits
+    random_str = ''.join((random.choice(chars) for i in range(length)))
+    return random_str
+    
 
 class History(models.Model):
     user        = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
@@ -16,3 +25,9 @@ class History(models.Model):
 
     def __str__(self):
         return f'{self.action} - {self.page} - {self.user}'
+
+
+class User_Key(models.Model):
+    user    = models.OneToOneField(User, on_delete=models.CASCADE)
+    key     = models.CharField(max_length=15, default=get_random_string(15))
+

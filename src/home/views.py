@@ -55,7 +55,8 @@ def signup_view(request):           #SignUp
         pass
 
     #update_history(request)
-    return HttpResponse('<h1>Hello, World!</h1>Signup')
+    #return HttpResponse('<h1>Hello, World!</h1>Signup')
+    return render(request, 'home/signup.html')
 
 def logout_view(request):           #Logout
     #update_history(request)

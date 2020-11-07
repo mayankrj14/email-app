@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-height: 100%;
+    background-color: #2fccdf;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: center;
+    margin-bottom: 5px;
+ }
+
+ a {
+     color: #fff;
+ }
+
+ a:hover {
+    color: #2c50ac;
+ }

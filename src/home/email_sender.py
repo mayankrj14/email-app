@@ -3,10 +3,10 @@ import smtplib
 
 def send_mail_(args):
     #print('mail')
-    from_addr   = args['From']
-    password    = args['Password']
+    from_addr   = args['From']  #
+    password    = args['Password']  #
 
-    to_addr     = args['To']
+    to_addr     = args['To']    #
     cc_addr     = args['CC']
     bcc_addr    = args['BCC']
         
@@ -14,8 +14,8 @@ def send_mail_(args):
         server.starttls()
         server.login(from_addr, password)
 
-        SUBJECT = args['Subject']  
-        TEXT = args['Text']  
+        SUBJECT = args['Subject']   #
+        TEXT = args['Text']         #
         
         #message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
         message     = "From: %s\r\n" % from_addr

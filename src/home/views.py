@@ -13,6 +13,8 @@ from .extra import (
     update_history,
 )
 
+from .forms import CreateUserForm
+
 def home_view(request):             #
     context = {
         
@@ -50,13 +52,19 @@ def login_view(request):            #Login
 #SignUp
 def signup_view(request):           #SignUp
     #update_history(request)
+    form = CreateUserForm()
+    
 
     if request.method == "POST":
         pass
 
     #update_history(request)
     #return HttpResponse('<h1>Hello, World!</h1>Signup')
-    return render(request, 'home/signup.html')
+    context = {
+        'form'  : form,
+
+    }
+    return render(request, 'home/signup.html', context)
 
 def logout_view(request):           #Logout
     #update_history(request)

@@ -56,10 +56,13 @@ def signup_view(request):           #SignUp
     
 
     if request.method == "POST":
-        pass
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            create_user_(form)
+            return HttpResponse("User Saved")
 
-    #update_history(request)
-    #return HttpResponse('<h1>Hello, World!</h1>Signup')
+
+
     context = {
         'form'  : form,
 

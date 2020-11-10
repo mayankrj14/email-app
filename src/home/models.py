@@ -33,3 +33,7 @@ class User_Key(models.Model):
 
     def activate(self, bool=True):
         self.user.is_active = bool
+        self.user.save()
+
+    def __str__(self):
+        return f"{self.user.username} --- {self.key}"

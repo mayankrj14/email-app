@@ -2,19 +2,16 @@ from django.contrib.auth.models import User
 from django.shortcuts import (redirect, )
 from django.urls import resolve
 
-from .models import History
+from .models import History, User_Key
 
-def create_user_(request):
+def create_user_(form):
 
-    user = User(
-        username    = request.POST.get('username'),
-        first_name  = request.POST.get('first_name'),
-        last_name   = request.POST.get('last_name'),
-        email       = request.POST.get('email'),
-        password    = request.POST.get('password'),  
-    )
-        
-    user.save()
+    form.save()
+    print(form.cleaned_data)
+    user = User.objects.get(username=form.cleaned_data['username'])
+    User_Key.objects.create(user=user)
+    user.user_key.activate(False)
+ 
 
 
 def get_client_ip(request):

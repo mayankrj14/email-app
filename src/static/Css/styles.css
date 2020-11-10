@@ -11,9 +11,20 @@ body {
     min-height: 100%;
     background-color: #2fccdf;
 }
+.mainpage {
+    min-height: 100%;
+}
 
+.messagearea {
+    display: block;
+    width:50%;
+}
+
+.chosefile {
+    float:right;
+}
 .footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     margin-left: 8%;
     margin-right: 8%;

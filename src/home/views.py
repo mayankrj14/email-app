@@ -1,19 +1,19 @@
 from django.shortcuts import (
     redirect, render, get_object_or_404 )
 from django.http import (HttpResponse, )
+from django.contrib import messages
 
 #User and login imports
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-
 from .models import User_Key
+from .forms import CreateUserForm, LoginUserForm
+
 #created module
 from .extra import (
     create_user_,
     update_history,
 )
-
-from .forms import CreateUserForm
 
 def home_view(request):             #
     context = {
@@ -28,25 +28,29 @@ def home_view(request):             #
 
 #Login and Logout
 def login_view(request):            #Login
-    context = {
-        
-    }
-
+    form = LoginUserForm()
+    context = {'form'  : form}
     if request.method == "POST":
-        username_   = request.POST.get('username')
-        password_   = request.POST.get('password')
-
-        print(username_,password_)
-        user = authenticate(username = username_, password = password_)
+        form = LoginUserForm(request, request.POST)
+        if form.is_valid():
+            username_   = request.POST.get('username')
+            password_   = request.POST.get('password')
+            print(username_,password_)
+            user = authenticate(username = username_, password = password_)
         
-        if user is not None:
-            login(request, user)
-            return HttpResponse('<h1>Hello World</h1><h1>Email Page Redirect</h1>')
+            if user is not None:
+                login(request, user)
+                #return HttpResponse('<h1>Hello World</h1><h1>Email Page Redirect</h1>')
+                messages.success(request, 'Login Sucessful')
+                return redirect('Home:Home')
             
         else:
             context['message'] = 'Invalid username/password'
-    #update_history(request)        
-    return render(request, 'home/login.html')
+    #update_history(request)'''
+    context = {
+        'form'  : form
+    }
+    return render(request, 'home/login.html', context)
 
 
 #SignUp
@@ -82,7 +86,6 @@ def activation_view(request, user_, key_):
     
     if user.user_key.key == key_:
         user.user_key.activate()
-        user.save()
         return HttpResponse(f'<h1>You Are Activated...</h1>')
 
     else:

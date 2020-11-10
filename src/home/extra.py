@@ -7,7 +7,7 @@ from .models import History, User_Key
 def create_user_(form):
 
     form.save()
-    print(form.cleaned_data)
+    #print(form.cleaned_data)
     user = User.objects.get(username=form.cleaned_data['username'])
     User_Key.objects.create(user=user)
     user.user_key.activate(False)

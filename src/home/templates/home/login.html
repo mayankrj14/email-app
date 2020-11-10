@@ -43,8 +43,7 @@
     
     <form id="login-form" method="POST">
       {% csrf_token %}
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Your Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Enter your Password">
+      {{form}}
       <input type="submit" value="Login" id="login-form-submit">
     </form>
   </main>

@@ -33,7 +33,7 @@ body {
  }
 
  a {
-     color: #fff;
+     color: rgb(255, 0, 0);
  }
 
  a:hover {

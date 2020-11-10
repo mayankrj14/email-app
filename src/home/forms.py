@@ -26,7 +26,7 @@ class CreateUserForm(UserCreationForm, forms.Form):
                                 "placeholder"   : "username",
                                 }))
     
-    email  = forms.CharField(label = "Email",
+    email  = forms.EmailField(label = "Email",
                         widget= forms.TextInput(
                             attrs = {
                                 "class"         : "form-control",
@@ -35,19 +35,17 @@ class CreateUserForm(UserCreationForm, forms.Form):
                                 }))
     
     password1  = forms.CharField(label = "Password",
-                        widget= forms.TextInput(
+                        widget= forms.PasswordInput(
                             attrs = {
                                 "class"         : "form-control",
                                 "placeholder"   : "Abcd@123",
-                                'type'          : 'password'
                                 }))
     
     password2  = forms.CharField(label = "Confirm Password",
-                        widget= forms.TextInput(
+                        widget= forms.PasswordInput(
                             attrs = {
                                 "class"         : "form-control",
                                 "placeholder"   : "Abcd@123",
-                                'type'          : 'password'
 }))
 
     class Meta:

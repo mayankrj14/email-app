@@ -22,7 +22,7 @@ class EmailForm(forms.Form):
                             }
                         ))
 
-    to_addr         = forms.EmailField(label="TO", 
+    to_addr         = forms.CharField(label="TO", 
                         widget=forms.TextInput(
                             attrs={
 
@@ -32,7 +32,7 @@ class EmailForm(forms.Form):
                             }
                         ))
                         
-    cc_addr         = forms.EmailField(label="CC", required=False,
+    cc_addr         = forms.CharField(label="CC", required=False,
                         widget=forms.TextInput(
                             attrs={
 
@@ -42,7 +42,7 @@ class EmailForm(forms.Form):
                             }
                         ))
     
-    bcc_addr        = forms.EmailField(label="BCC", required=False, 
+    bcc_addr        = forms.CharField(label="BCC", required=False, 
                         widget=forms.TextInput(
                             attrs={
 

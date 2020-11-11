@@ -3,19 +3,19 @@ import smtplib
 
 def send_mail_(args):
     #print('mail')
-    from_addr   = args['From']  #
-    password    = args['Password']  #
+    from_addr   = args['from_addr']  #
+    password    = args['password']  #
 
-    to_addr     = args['To']    #
-    cc_addr     = args['CC']
-    bcc_addr    = args['BCC']
+    to_addr     = args['to_addr'].split()    #
+    cc_addr     = args['cc_addr'].split() 
+    bcc_addr    = args['bcc_addr'].split() 
         
     with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.starttls()
         server.login(from_addr, password)
 
-        SUBJECT = args['Subject']   #
-        TEXT = args['Text']         #
+        SUBJECT = args['subject']   #
+        TEXT = args['text']         #
         
         #message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
         message     = "From: %s\r\n" % from_addr

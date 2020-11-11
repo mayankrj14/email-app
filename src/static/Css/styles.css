@@ -39,3 +39,7 @@ body {
  a:hover {
     color: #2c50ac;
  }
+
+ .form-control{
+    margin-bottom: 1rem;
+}

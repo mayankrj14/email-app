@@ -35,7 +35,6 @@ def login_view(request):            #Login
         if form.is_valid():
             username_   = request.POST.get('username')
             password_   = request.POST.get('password')
-            print(username_,password_)
             user = authenticate(username = username_, password = password_)
         
             if user is not None:

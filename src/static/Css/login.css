@@ -9,6 +9,7 @@ body {
   justify-items: center; 
   align-items: center;
   background-color:#2fccdf;
+  background-image: url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Colorful-Geometric-Simple-Background-Image.jpg");
 }
 
 #main-holder {
@@ -89,4 +90,8 @@ body {
 
 #foot{
   color: #fff;
+}
+
+.form-control{
+  margin-bottom: 1rem;
 }
